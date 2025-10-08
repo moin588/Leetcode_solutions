@@ -1,0 +1,14 @@
+class Solution:
+    def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
+        n=len(matrix)
+        m=len(matrix[0])
+        rows=0
+        cols=m-1
+        while rows<n and cols>=0:
+            if(matrix[rows][cols]==target):
+                return True
+            elif(matrix[rows][cols]<target):
+                rows+=1;
+            else:
+                cols-=1;
+        return False
